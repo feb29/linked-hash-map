@@ -8,6 +8,7 @@ authors = [
     "Stepan Koltsov <stepan.koltsov@gmail.com>",
     "Andrew Paseltiner <apaseltiner@gmail.com>",
 ]
+publish = false
 
 repository = "https://github.com/contain-rs/linked-hash-map"
 homepage = "https://github.com/contain-rs/linked-hash-map"
