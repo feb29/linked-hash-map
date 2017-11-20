@@ -2,6 +2,7 @@ extern crate linked_hash_map;
 
 use linked_hash_map::{Entry, LinkedHashMap};
 
+#[allow(needless_pass_by_value)]
 fn assert_opt_eq<V: PartialEq>(opt: Option<&V>, v: V) {
     assert!(opt.is_some());
     assert!(opt.unwrap() == &v);
@@ -153,7 +154,7 @@ fn test_debug() {
     assert_eq!(format!("{:?}", map), "{1: 10, 3: 30, 2: 22}");
     map.get(&3);
     assert_eq!(format!("{:?}", map), "{1: 10, 3: 30, 2: 22}");
-    map.get_refresh(&mut 3);
+    map.get_refresh(&3);
     assert_eq!(format!("{:?}", map), "{1: 10, 2: 22, 3: 30}");
     map.clear();
     assert_eq!(format!("{:?}", map), "{}");
